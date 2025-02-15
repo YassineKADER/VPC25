@@ -6,3 +6,5 @@ transformers==4.48.2
 torch==2.6.0
 speechbrain==1.0.2
 librosa==0.10.2.post1
+pyrubberband
+
