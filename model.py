@@ -14,7 +14,7 @@ def anonymize(input_audio_path):
     """
     # Base parameters
     privacy_level = 0.25  # Increased for better anonymity
-    intelligibility_boost = 0.7  # For WER improvement
+    intelligibility_boost = 0.0  # For WER improvement
     sr = None  # Preserve original sample rate
 
     y, sr = librosa.load(input_audio_path, sr=sr)
@@ -27,8 +27,8 @@ def anonymize(input_audio_path):
     # Dynamic parameter calculation
     pitch_shift_range = (-4.5 * privacy_level, 4.5 * privacy_level)
     formant_shift_range = (1 - 0.35 * privacy_level, 1 + 0.35 * privacy_level)
-    noise_level = 0.012 * privacy_level
-    reverb_level = 0.35 * privacy_level
+    noise_level = 0.0 * privacy_level
+    reverb_level = 0.0 * privacy_level
 
     # Stage 1: Adaptive spectral preservation
     S = librosa.stft(y)
